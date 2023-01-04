@@ -58,11 +58,11 @@ const burger = {
 	fiyat: 18, 
 	kategori: "Öğle Yemeği", 
      
-	indirim : function(str){
-		if(str == "öğretmen" || str == "öğrenci"){
+	indirim : function(xyz){
+		if(xyz == "öğretmen" || xyz == "öğrenci"){
 			 return this.fiyat* (3/4);
 		}
-		else if(str == "diğer"){
+		else if(xyz == "diğer"){
 			return this.fiyat*(9/10);
 		}
 		
