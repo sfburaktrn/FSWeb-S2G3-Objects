@@ -15,11 +15,16 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(/*Kodlar buraya*/){
-	/*Kodlar buraya*/
+function MenuElemaniOlustur(x,y,z){
+	let menü = {
+		isim : x,
+		fiyat : y,
+		kategori : z
+	}
+return menü;
 }
 
-
+console.log(MenuElemaniOlustur('Cheeseburger', 8, 'Burgerler'));
 
 /*  Görev 1b (otomatik test yok): 
 	Fonksiyonu çağırın!
@@ -30,7 +35,9 @@ function MenuElemaniOlustur(/*Kodlar buraya*/){
 	
 	Örnek: MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar") şunu döndürür: {isim:"Karışık Pizza",fiyat:5,kategori:"Pizzalar"}
 */
-
+console.log(MenuElemaniOlustur("döner",25,"anadolu mutfağı"));
+console.log(MenuElemaniOlustur("mercimek",18,"çorbalar"));
+console.log(MenuElemaniOlustur("adana kebab",65,"kebablar"));
 
 
 /* Görev 2: 
@@ -50,9 +57,20 @@ const burger = {
 	isim: "Burger", 
 	fiyat: 18, 
 	kategori: "Öğle Yemeği", 
+     
+	indirim : function(str){
+		if(str == "öğretmen" || str == "öğrenci"){
+			 return this.fiyat* (3/4);
+		}
+		else if(str == "diğer"){
+			return this.fiyat*(9/10);
+		}
+		
+	}
+
 
 }
-
+console.log(burger.indirim("öğretmen"));
 
 
 ///////////////Değerlendirmeler (MVP)///////////////////
@@ -71,7 +89,7 @@ const degerlendirmeler = [
 	Yukarıdaki degerlendirmeler dizisini(array) kullanarak:
 	1. Sadece Ahmet'in geribildirimini konsolda görüntüleyin - fonksiyona gerek yok
 */
-
+console.log (degerlendirmeler[5].geribildirim);
 
 
 /*  Görev 4 (ototest yok):  
@@ -80,6 +98,8 @@ const degerlendirmeler = [
 	2. degerlendirmeler dizisini konsolda görüntüleyerek çalışmanızı kontrol edin
 */
 
+    degerlendirmeler[7].geribildirim = "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım";
+	console.log (degerlendirmeler[7].geribildirim);
 
 
 /*  Görev 5: 
@@ -94,10 +114,19 @@ const degerlendirmeler = [
 */
 
 
-function DegerledirmeEkle(/*Kodlar buraya */){
-	/*Kodlar buraya */
-	
+function DegerledirmeEkle(degerlendirmelr, isim, puan, geribildirim){
+
+	let newo = {
+		isim: isim,
+		puan: puan,
+		geribildirim: geribildirim,
+	};
+
+	degerlendirmelr.push(newo);
+	return degerlendirmelr;
+
 }
+console.log(DegerledirmeEkle(degerlendirmeler, 'Hurşut', 2, 'Boktan yemekler!'));
 
 
 
